@@ -29,6 +29,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.exoplayer2.demo.player.RtmpDataSource;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlaybackException;
@@ -67,6 +69,7 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Util;
+
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
@@ -340,7 +343,9 @@ public class PlayerActivity extends Activity implements OnClickListener, ExoPlay
       case C.TYPE_HLS:
         return new HlsMediaSource(uri, mediaDataSourceFactory, mainHandler, eventLogger);
       case C.TYPE_OTHER:
-        return new ExtractorMediaSource(uri, mediaDataSourceFactory, new DefaultExtractorsFactory(),
+        return new ExtractorMediaSource(uri,
+                TextUtils.equals(uri.getScheme(), "rtmp") ? new RtmpDataSource.Factory() : mediaDataSourceFactory,
+                new DefaultExtractorsFactory(),
             mainHandler, eventLogger);
       default: {
         throw new IllegalStateException("Unsupported type: " + type);
