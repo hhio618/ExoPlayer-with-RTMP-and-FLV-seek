@@ -386,6 +386,14 @@
       {
         "name": "Big Buck Bunny (FLV Video)",
         "uri": "http://vod.leasewebcdn.com/bbb.flv?ri=1024&rs=150&start=0"
+      },
+      {
+        "name": "Ardrone Live Stream(FLV Video via RTMP)",
+        "uri": "rtmp://stream.butterflytv.net/ButterFly_Red5/from_drone274"
+      },
+      {
+        "name": "OSSR net RTMP Live Stream",
+        "uri": "rtmp://ossrs.net:1935/live/livestream"
       }
     ]
   },
