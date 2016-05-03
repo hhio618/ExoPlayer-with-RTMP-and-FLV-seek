@@ -45,5 +45,5 @@ dependencies {
     withExtensionsCompile project(path: ':extension-flac')
     withExtensionsCompile project(path: ':extension-opus')
     withExtensionsCompile project(path: ':extension-vp9')
-    compile 'net.butterflytv.utils:rtmp-client:0.2.1'
+    compile 'net.butterflytv.utils:rtmp-client:0.2.6.1'
 }
