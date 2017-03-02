@@ -31,6 +31,6 @@ android {
 
 dependencies {
     compile project(':library')
-    androidTestCompile project(':testutils')
+//    androidTestCompile project(':testutils')
 }
 
