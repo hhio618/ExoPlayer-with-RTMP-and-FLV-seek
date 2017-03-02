@@ -276,12 +276,9 @@ public final class MediaCodecUtil {
       return false;
     }
     // VP8 decoder on Samsung Galaxy S4 cannot be queried.
-    if (Util.SDK_INT <= 19 && Util.DEVICE.startsWith("jflte")
-        && "OMX.qcom.video.decoder.vp8".equals(name)) {
-      return false;
-    }
+    return !(Util.SDK_INT <= 19 && Util.DEVICE.startsWith("jflte")
+            && "OMX.qcom.video.decoder.vp8".equals(name));
 
-    return true;
   }
 
   /**
